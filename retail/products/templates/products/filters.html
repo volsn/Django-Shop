@@ -1,0 +1,21 @@
+<div class="container filters">
+    <!-- TODO add some filters here -->
+    <form method="GET">
+        <div class="filters__category btn-group" role="group" aria-label="Basic example">
+            <div class="btn btn-secondary"><input type="radio" name="sort">Standart sort</div>
+            <div class="btn btn-secondary"><input type="radio" name="sort" value="asc">Price ascending</div>
+            <div class="btn btn-secondary"><input type="radio" name="sort" value="desc">Price descening</div>
+        </div>
+
+        <div class="filters__category btn-group" role="group" aria-label="Basic example">
+            <div class="btn btn-secondary"><input type="radio" name="ctg">All products</div>
+            <div class="btn btn-secondary"><input type="radio" name="ctg" value="fd">Food</div>
+            <div class="btn btn-secondary"><input type="radio" name="ctg" value="hm">Home</div>
+            <div class="btn btn-secondary"><input type="radio" name="ctg" value="bth">Bathroom</div>
+        </div>
+
+        <div class="filters__category btn-group" role="group" aria-label="Basic example">
+            <button type="submit" class="btn btn-secondary">View Products</button>
+        </div>
+    </form>
+</div>

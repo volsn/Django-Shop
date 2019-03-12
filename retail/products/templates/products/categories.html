@@ -1,0 +1,28 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% load poll-extras %}
+
+{% block title %}Products for {{ title }}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static "products/css/categories.css" %}">
+{% endblock%}
+
+{% block content %}
+    <div class="container description">
+        <h2 class="description__header">{{ title }}</h2>
+        <p class="description__text">
+            {{ description }}
+        </p>
+    </div>
+    <div class="container products">
+        {% for product in products %}
+        <div class="products__product">
+            <img alt="{{ product.name }}" src="../static/img/{{ product.title|validate|lower }}.jpeg">
+            <a href="#"><h3 class="product__name">{{ product.title }}</h3></a>
+            <p class="product__price">{{ product.price }}</p>
+            <p class="product__short_description">{{ product.short_description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
