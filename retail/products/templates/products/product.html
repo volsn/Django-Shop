@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load poll-extras %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+
+    <h3>{{ title }}.</h3>
+    <p>{{ short_description }}</p>
+
+    <img alt="{{ name }}" src="../static/img/{{ title|validate|lower }}.jpeg">
+
+    <p>{{ description }}</p>
+
+{% endblock %}

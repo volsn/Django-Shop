@@ -1,4 +1,4 @@
-{% extends 'products/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% load poll-extras %}
 
@@ -16,7 +16,7 @@
         {% for product in products %}
             <div class="products__product">
                 <img alt="{{ product.name }}" src="../static/img/{{ product.title|validate|lower }}.jpeg">
-                <a href="#"><h3 class="product__name">{{ product.title }}</h3></a>
+                <a href="/prd?title={{ product.title }}"><h3 class="product__name">{{ product.title }}</h3></a>
                 <p class="product__price">{{ product.price }}</p>
                 <p class="product__short_description">{{ product.short_description }}</p>
             </div>

@@ -66,21 +66,6 @@ class ProductsView(View):
             query.add_product(product)
         """
 
-        """
-        names = initialize_store()
-
-        for name in names:
-            product = query.get_product(name)
-            if name == 'All purpose':
-                category = query.get_category('Bathroom')
-                product.category.add(category)
-                product.save()
-            else:
-                category = query.get_category('Food')
-                product.category.add(category)
-                product.save()
-        """
-
         if request.GET.get('ctg') == 'fd':
             products = query.get_by_category('Food')
         elif request.GET.get('ctg') == 'hm':
@@ -126,3 +111,18 @@ class CategoriesView(View):
         }
 
         return render(request, 'products/categories.html', context=context)
+
+
+class ProductView(View):
+
+    def get(self, request):
+
+        product = query.get_product(request.GET['title'])
+
+        context = {
+            'title': request.GET['title'],
+            'short_description': product.short_description,
+            'description': product.description,
+        }
+
+        return render(request, 'products/product.html', context=context)
